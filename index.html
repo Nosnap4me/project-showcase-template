@@ -61,18 +61,17 @@
             grid-gap: 20px;
             flex-grow: 1; /* Allow content to grow */
         }
-
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            opacity: 0; /* Start hidden for animation */
-            animation: fadeIn 0.5s forwards; /* Add fade-in animation */
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
+.card {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:nth-of-type(n) {
+    animation-delay: calc(0.1s * var(--i));
+}
         @keyframes fadeIn {
             to {
                 opacity: 1; /* Fade in effect */
@@ -189,18 +188,5 @@
             <h3>Project 10</h3>
             <p>Project description goes here.</p>
         </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/250" alt="Project 11">
-            <h3>Project 11</h3>
-            <p>Project description goes here.</p>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/250" alt="Project 12">
-            <h3>Project 12</h3>
-            <p>Project description goes here.</p>
-        </div>
-    </div>
-
-    <footer>© 2024 Your Name</footer>
 </body>
 </html>
